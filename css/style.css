@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'Creepster-Regular';
+  src: url('Creepster-Regular.ttf');
+}
+
+
+.game-wrapper {
+  width: 1250px;
+  height: 1200px;
+  background-color: gray;
+  margin: 0 auto;
+
+}
+
+.scoreboard {
+  width: 800px;
+  height: 100px;
+  background-color: mistyrose;
+  margin: 0 auto;
+
+
+
+}
+
+.sidebar {
+  width: 225px;
+  height: 800px;
+    background-color: green;
+
+
+
+}
+
+.board {
+  width: 800px;
+  height: 800px;
+  background-color: gray;
+  position: relative;
+  left: 226px;
+  bottom: 800px;
+  padding-left: 100px;
+
+
+}
+
+footer {
+  width: 800px;
+  height: 100px;
+  background-color: mistyrose;
+  margin: 0 auto;
+
+}
+
+.boardPiece {
+
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 20px
+
+}
+
+p {
+  font-family: 'Creepster-Regular';
+  display: inline-block;
+  font-size: 32px;
+}
+
+.player-score,
+.player-ties,
+.computer-score {
+
+  display: inline-block;
+  width: 100px;
+  margin-left: 100px;
+}
+
+h1 {
+  font-family: 'Creepster-Regular';
+  font-size: 60px;
+  color: #54C571;
+  text-align: center;
+  margin: 0;
+}
+
+img {
+
+  margin-left: auto;
+  	margin-right: auto;
+  	display: block;
+    width: 150px;
+    height: 150px;
+
+
+}
