@@ -3,11 +3,15 @@
   src: url('Creepster-Regular.ttf');
 }
 
+body {
+
+  background-color: black;
+}
 
 .game-wrapper {
   width: 1250px;
   height: 1200px;
-  background-color: gray;
+  background-color: black;
   margin: 0 auto;
 
 }
@@ -15,8 +19,9 @@
 .scoreboard {
   width: 800px;
   height: 100px;
-  background-color: mistyrose;
+  background-color: black;
   margin: 0 auto;
+  color: #54C571;
 
 
 
@@ -25,8 +30,8 @@
 .sidebar {
   width: 225px;
   height: 800px;
-    background-color: green;
-
+    background-color: black;
+color: #54C571;
 
 
 }
@@ -34,7 +39,7 @@
 .board {
   width: 800px;
   height: 800px;
-  background-color: gray;
+  background-color: black;
   position: relative;
   left: 226px;
   bottom: 800px;
@@ -46,16 +51,16 @@
 footer {
   width: 800px;
   height: 100px;
-  background-color: mistyrose;
+  background-color: black;
   margin: 0 auto;
 
 }
 
-.boardPiece {
+.boardPiece{
 
   width: 200px;
   height: 200px;
-  background-color: orange;
+  background-color: #54C571;
   display: inline-block;
   border: 2px solid black;
   border-radius: 20px
@@ -66,6 +71,7 @@ p {
   font-family: 'Creepster-Regular';
   display: inline-block;
   font-size: 32px;
+  color: #54C571;
 }
 
 .player-score,
@@ -73,8 +79,10 @@ p {
 .computer-score {
 
   display: inline-block;
-  width: 100px;
+  background-color: black;
+  width: 150px;
   margin-left: 100px;
+
 }
 
 h1 {
@@ -93,5 +101,14 @@ img {
     width: 150px;
     height: 150px;
 
+
+}
+
+#player-score,
+#player-ties,
+#computer-score {
+font-family: 'Creepster-Regular';
+color: white;
+font-size: 32px;
 
 }
