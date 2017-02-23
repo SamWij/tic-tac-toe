@@ -28,6 +28,12 @@ console.log("tic tac toe connected");
 
   });
 
+
+  var startOver = $("button").click(function() {
+
+    location.reload();
+
+  });
   var playAgain = $("button").click(function() {
 
     clearBoard();
