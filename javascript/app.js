@@ -28,6 +28,12 @@ console.log("tic tac toe connected");
 
   });
 
+  var playAgain = $("button").click(function() {
+
+    clearBoard();
+
+  });
+
   var updateBoard = function(playerPick, board) {
 
       var itemtoRemove = parseInt(playerPick);
@@ -57,37 +63,22 @@ console.log("tic tac toe connected");
           turn = 0;
           playerTurn(turn)
         }
-          // player2Play(player1Position, board);
+
           dataCheck(player1Position, player2Position, board, player1Turns, player2Turns);
 
       }
 
       var playerTurn = function() {
         if (turn === 0) {
-            $( ".player1" ).effect( "highlight", "slow" );
+            $( ".player2" ).effect( "highlight", {color: 'red'}, 1000 );
 
         } else if (turn === 1) {
-            $('.player2').effect( "highlight", "slow" );
+            $('.player1').effect( "highlight", {color: 'red'}, 1000 );
 
         }
 
       }
-  // function player2Play(playerPosition1,board, player1Turns) {
-  //     turn = 0;
-  //     var box = board[Math.floor(Math.random()* board.length)]
-  //       player2Turns++;
-  //
-  //       console.log("Computer Player: " + player2Turns);
-  //
-  //      if($("#"+box).children('img').length !== 1) {
-  //
-  //         $("#"+box).append("<img src='images/player2.png' />");
-  //
-  //          player2Position.push(box);
-  //          updateBoard(box, board)
-  //
-  //       }
-  // };
+
 
 function dataCheck(player1Position, player2Position, board, player1Turns, player2Turns) {
 
@@ -96,7 +87,7 @@ function dataCheck(player1Position, player2Position, board, player1Turns, player
 
     } else {
         checkforWinner(player1Position, player2Position, board);
-      
+
       }
 }
 
@@ -173,27 +164,29 @@ function dataCheck(player1Position, player2Position, board, player1Turns, player
 
 
 function updateScoreBoard(winP1, winP2, board) {
+  var win =""
   if (winP1 === true) {
     player1TotalWins++
     console.log("Player1 Won: " + winP1);
-    var win = "Player1"
+    win = "Player1"
 
-    WinningMessageShow(win);
+
 
   } else if (winP2 === true) {
     player2TotalWins++;
     console.log("Player2 Won: " + winP2);
-    var win = "Player2"
+    win = "Player2"
 
-    WinningMessageShow(win);
+
 
   } else if (board.length <= 1 && winP1 != true && winP2 != true) {
     ties++
     console.log("TIE: " + "P1 "+ winP1 + "P2 "+ winP2 + "board length "+ board.length)
-    var win = "tie"
+    win = "tie"
 
-    WinningMessageShow(win);
+
   }
+  // WinningMessageShow(win);
   $(".playerTotal").text(player1TotalWins)
   $(".ties").text(ties)
   $(".computerTotal").text(player2TotalWins)
@@ -205,6 +198,7 @@ function clearBoard() {
 
 $( ".boardPiece" ).empty();
 turn = 0;
+var win ="";
 player1Turns = 0;
 player2Turns = 0;
 player1Position = [];
@@ -213,21 +207,19 @@ board = [1,2,3,4,5,6,7,8,9];
 $(".boardPiece").show();
 }
 
+clearBoard();
 
+// function WinningMessageShow(win) {
+//
+//   if (win === "Player1") {
+//       $(".boardPiece").hide();
+//       $(".win-p1-messages").show().fadeOut(4000);
+//     } else if (win === "Player1") {
+//       $(".boardPiece").hide();
+//       $(".win-p2-messages").show().fadeOut(4000);
+//     } else if (win === "tie") {
+//           $(".boardPiece").hide();
+//           $(".tie-messages").show().fadeOut(4000);
+//       }
 
-function WinningMessageShow(win) {
-  hideBoardPiece();
-  if (win === "Player1") {
-      $(".win-p1-messages").show().fadeOut(4000);
-    } else if (win === "Player1") {
-      $(".win-p2-messages").show().fadeOut(4000);
-      } else if (win === "tie") {
-          $(".tie-messages").show().fadeOut(4000);
-      }
-        clearBoard();
-  }
-
-
-function hideBoardPiece() {
-  $(".boardPiece").hide();
-}
+  // }
