@@ -99,17 +99,17 @@ var player2Turns = 5;
 
 
           for ( p2= 0; p2 < winningCombs.length; p2++) {
-              var setsP2 = winningCombs[p2];  // winning combinations
+              
               var setFoundP2 = true;
 
-                    for (r = 0; r < setsP2.length; r++) {
+                    for (r = 0; r < winningCombs[p2].length; r++) {
                           // check if number matches winning combo
                           // if not, break, not winner
                           var foundP2 = false;
 
                           // players hand
                         for (s = 0; s < player2Position.length; s++) {
-                            if (setsP2[r] == player2Position[s]) {
+                            if (winningCombs[p2][r] == player2Position[s]) {
 
                                 foundP2 = true;
                                 break;
@@ -145,13 +145,13 @@ function updateScoreBoard(winP1, winP2, board) {
     player1TotalWins++
     console.log("Player1 Won: " + winP1);
     clearBoard()
-  } else if (board.length <= 1 && winP1 != true && winP2 != true) {
-    ties++
-    console.log("TIE: " + "P1 "+ winP1 + "P2 "+ winP2 + "board length "+ board.length)
-    clearBoard()
   } else if (winP2 === true) {
     player2TotalWins++;
     console.log("Player2 Won: " + winP2);
+    clearBoard()
+  } else if (board.length <= 1 && winP1 != true && winP2 != true) {
+    ties++
+    console.log("TIE: " + "P1 "+ winP1 + "P2 "+ winP2 + "board length "+ board.length)
     clearBoard()
   }
   $(".playerTotal").text(player1TotalWins)
