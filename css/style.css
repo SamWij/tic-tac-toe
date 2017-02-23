@@ -5,13 +5,13 @@
 
 body {
 
-  background-color: black;
+  background-color: #212121;
 }
 
 .game-wrapper {
   width: 1250px;
   height: 1200px;
-  background-color: black;
+  background-color: #212121;
   margin: 0 auto;
 
 }
@@ -19,30 +19,31 @@ body {
 .scoreboard {
   width: 800px;
   height: 100px;
-  background-color: black;
+  background-color: #212121;
   margin: 0 auto;
   color: #54C571;
-
-
-
 }
 
 
 
 .board {
-  width: 800px;
-  height: 800px;
-  background-color: black;
+  width: 650px;
+  height: 650px;
+  background-color: #212121;
   margin: 0 auto;
-
+  padding-bottom: 0;
 
 }
 
 footer {
   width: 800px;
   height: 100px;
-  background-color: orange;
+  background-color: #4c5128;
   margin: 0 auto;
+  border-radius: 20px;
+  font-family: 'Creepster-Regular';
+  font-style: 19px;
+
 
 }
 
@@ -52,11 +53,10 @@ footer {
   height: 200px;
   background-color: #54C571;
   display: inline-block;
-  border: 2px solid black;
+  border: 2px solid #212121;
   border-radius: 20px;
   position: relative;
-  left: 100px;
-
+  left: 5px;
 
 }
 
@@ -64,7 +64,7 @@ p {
   font-family: 'Creepster-Regular';
   display: inline-block;
   font-size: 32px;
-  color: #54C571;
+  color: #8b978b;
 }
 
 .player-score,
@@ -72,9 +72,9 @@ p {
 .computer-score {
 
   display: inline-block;
-  background-color: black;
+  background-color: #212121;
   width: 140px;
-  margin-left: 100px;
+  margin-left: 87px;
   height: 100px;
 
 }
@@ -94,8 +94,6 @@ img {
   	display: block;
     width: 150px;
     height: 150px;
-
-
 }
 
 #player-score,
@@ -113,4 +111,42 @@ span {
   font-size: 32px;
   text-align: center;
   margin-left: 10px;
+}
+.win-p2-messages,
+.win-p1-messages,
+.tie-messages {
+  width: 400px;
+  height: 350px;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 20px;
+  font-family: 'Creepster-Regular';
+  font-size: 32px;
+  text-align: center;
+}
+
+#explode,
+#explode1,
+#ties {
+
+    margin: 0 auto;
+    width: 334px;
+    height: 300px;
+    z-index: -1;
+
+}
+
+.github,
+.linkedin{
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+li {
+float:right;
+display:inline;
+margin-left: 15px;
+margin-top: 15px;
+list-style:none;
 }
