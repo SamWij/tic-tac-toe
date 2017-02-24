@@ -8,7 +8,7 @@
  1 2 3
  4 5 6
  7 8 9
- 
+
 2. sketch out the HTML page into divs, this will give me an idea of the css and alignment of the page.
 3. start to work out the variables and functions required within javascript.  I focused on the arrays required to calculate the winning combination.
 4.  Think about the theme or idea of the game.
@@ -28,48 +28,77 @@ Another challenge I had was I started off wanting to play against a computer, wi
 ###Repetitive Code
 I was unable to overcome this.  I attempted to clean up as much code as possible, however the winning combination code is very repetitive.
 
-###Unable to get win player 1, win player 2 and tie messages completed. tries using jQuery syntax $(".boardPiece").hide(); which i was unable to get working within a  messages function.
+###messages
+Unable to get win player 1, win player 2 and tie messages completed. tries using jQuery syntax $(".boardPiece").hide(); which i was unable to get working within a  messages function.
 
 ##Functions and Code
-  
- There are 8 functions within the code.
- 
- ###Player Turn
- 
- The turn function essentially is either a 1 or a 0.  This allows the game to keep track of whos turn it is.
- The player Turn is switched to a 0 or a 1 
- 
- ###player selection of the board
- 
- ###tracking the squares used on the board
- 
- ###winning combination function
- 
- ###messages
 
+ There are 8 functions within the code.  On click of an item (Div) on the board the script will capture the div "id" which represents the board number (1 to 9).  Once there are at least 3 squares clicked for either Player 1 or Player 2, only then will we check to see if there is a winner.  On winner OR tie the scoreboard will update and await for the user to click either start new game or play again.
 
+ Play again only resets the board and keeps scoreboard running.  Start Again will refresh the whole game board.
+
+###Player Turn
+
+ The turn function essentially is either a 1 or a 0.  This allows the game to keep track of which players turn it is.
+ The player Turn is switched to a 0 or a 1.  This will determine which if statement runs on the playgame function.
+
+###player selection of the board
+On click of a square on the page the Player1Play function will run.
+ Dependant on which players turn the player1Play the function will display an image of a Zombie.  The position that is clicked will be pushed up to a player array so we can track what positions they are at, and we update a running board (how many positions are left);  
+
+###tracking the squares used on the board
+
+there is a Board array:
+```var board = [1,2,3,4,5,6,7,8,9];
+ ```
+ Once a user clicks on the board the position is removed from the board, showing how many pieces left.  I was using this to create a random number and let the computer choose a remaining spot.  I didn't like this, as there was no intelligence to it so removed the computer chooses function. I however kept this variable to confirm if the board was tied or not.
+
+###winning combination function
+
+The winning combination function is not DRY at all.  I created two sections which run multiple for loops:
+
+Javascript example:  
+```var player1Position = [1,2,3];
+var player2Position = [1,2];
+var winningCombs = [[8,1,6], [3,5,7], [4,9,2], [8,3,4], [1,5,9], [6,7,2], [8,5,2], [6,5,4]]
+```
+The first for loop, loops through the winning combination nested array index.  While that for loop runs an inner for loop runs checking each value within the nested array.  
+
+within this for loop another for loop is running that checks the winning combination against the player position:
+
+```for (q = 0; q < player1Position.length; q++) {
+    if (winningCombs[p1][p] == player1Position[q]) {
+      foundP1 = true;
+      break;
+              }
+    }
+```
+
+This runs through twice, one for player1, the other for player 2.  This works, badly and will need to be re-thought though.
+
+###messages
+
+I did not complete messages and the code is commented out.  This is a part of the To Do list below.
+The objective was to on win or tie a message to appear by:
+
+1. hiding the board pieces.
+2. showing the message (in a div)
+3. fade the div out
+4. display the board.
 
 
 ## Things Not Finished/ To Do Items
 
-1. refactor code (merge the winning combination function
+1. refactor code (merge the winning combination function and re-write)
 2. get the winning combinations function completed.
-3. work on the animation on win, tie
+3. get the win and tie messages flashing.
 4. data storage
-5. get the win and tie messages flashing.
+5.
 
 
 ##Learnings
 
 1. don't panic!!!
-2. things that seem simple are not!
-3. do not read, or read other peoples code, it just confuses me.
+2. things that seem simple are not! think it through slowly, do not rush.
+3. do not read, or read other peoples code to get ideas, it just confuses me.  Approach things my way.
 4. psuedo code and write down the approach before beginning.
-
-
-
-
-
-
-
-

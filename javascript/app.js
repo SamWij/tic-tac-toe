@@ -3,12 +3,9 @@ console.log("tic tac toe connected");
   var player2Position = [];
 
   var board = [1,2,3,4,5,6,7,8,9];
-  var currentPlayer = 0;
   var ties = 0;
   var player1TotalWins = 0;
   var player2TotalWins =0;
-  var player1Turns = 0;
-  var player2Turns = 0;
   var turn = 0;
 
   //hide messages
@@ -29,12 +26,12 @@ console.log("tic tac toe connected");
   });
 
 
-  var startOver = $("button").click(function() {
+  var startOver = $(".reload").click(function() {
 
     location.reload();
 
   });
-  var playAgain = $("button").click(function() {
+  var playAgain = $(".new-game").click(function() {
 
     clearBoard();
 
@@ -54,7 +51,7 @@ console.log("tic tac toe connected");
      if ($("#"+playerPick).children().length !== 1 && turn === 0){
 
           console.log("player 1 turn " + turn)
-          player1Turns++
+
           $("#"+playerPick).append("<img src='images/player1.png' />");
           player1Position.push(parseInt(playerPick))
           turn = 1;
@@ -63,14 +60,14 @@ console.log("tic tac toe connected");
         } else if ($("#"+playerPick).children().length !== 1 && turn === 1) {
 
           console.log("player 2 turn " + turn)
-          player2Turns++;
+
           $("#"+playerPick).append("<img src='images/player2.png' />");
           player2Position.push(parseInt(playerPick))
           turn = 0;
           playerTurn(turn)
         }
 
-          dataCheck(player1Position, player2Position, board, player1Turns, player2Turns);
+          dataCheck(player1Position, player2Position, board);
 
       }
 
@@ -86,7 +83,7 @@ console.log("tic tac toe connected");
       }
 
 
-function dataCheck(player1Position, player2Position, board, player1Turns, player2Turns) {
+function dataCheck(player1Position, player2Position, board) {
 
   if (player1Position.length < 3 && player2Position.length < 3) {
       console.log("not enough data to determine a winner");
@@ -205,8 +202,6 @@ function clearBoard() {
 $( ".boardPiece" ).empty();
 turn = 0;
 var win ="";
-player1Turns = 0;
-player2Turns = 0;
 player1Position = [];
 player2Position = [];
 board = [1,2,3,4,5,6,7,8,9];

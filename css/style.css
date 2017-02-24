@@ -11,7 +11,7 @@ body {
 
 .game-wrapper {
   width: 1250px;
-  height: 1200px;
+  height: 1000px;
   background-color: #212121;
   margin: 0 auto;
 
@@ -19,7 +19,7 @@ body {
 
 .scoreboard {
   width: 800px;
-  height: 100px;
+  height: 50px;
   background-color: #212121;
   margin: 0 auto;
   color: #54C571;
@@ -29,7 +29,7 @@ body {
 
 .board {
   width: 650px;
-  height: 650px;
+  height: 600px;
   background-color: #212121;
   margin: 0 auto;
   padding-bottom: 0;
@@ -181,15 +181,28 @@ font-size: 20px;
 
 button {
 
-background-color: #54C571;
+
 width: 200px;
 height: 60px;
-font-family: 'Creepster-Regular';
-color: white;
-font-size: 25px;
+
+
+
 position: relative;
 bottom: 90px;
 border-radius: 10px;
 margin-bottom: 20px;
+font-family: 'Creepster-Regular';
+font-size: 25px;
+background-color: #54C571;
+
+}
+
+.new-game {
+  color: #8A1A07;
+
+}
+
+.reload {
+
 
 }
