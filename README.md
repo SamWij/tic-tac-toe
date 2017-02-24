@@ -60,8 +60,8 @@ The winning combination function is not DRY at all.  I created two sections whic
 Javascript example:  
 ```var player1Position = [1,2,3];
 var player2Position = [1,2];
-var winningCombs = [[8,1,6], [3,5,7], [4,9,2], [8,3,4], [1,5,9], [6,7,2], [8,5,2], [6,5,4]]
-```
+var winningCombs = [[8,1,6], [3,5,7], [4,9,2], [8,3,4], [1,5,9], [6,7,2], [8,5,2], [6,5,4]]```
+
 The first for loop, loops through the winning combination nested array index.  While that for loop runs an inner for loop runs checking each value within the nested array.  
 
 within this for loop another for loop is running that checks the winning combination against the player position:
@@ -71,8 +71,8 @@ within this for loop another for loop is running that checks the winning combina
       foundP1 = true;
       break;
               }
-    }
-```
+    }```
+
 
 This runs through twice, one for player1, the other for player 2.  This works, badly and will need to be re-thought though.
 
