@@ -7,6 +7,7 @@ console.log("tic tac toe connected");
   var player1TotalWins = 0;
   var player2TotalWins =0;
   var turn = 0;
+  var winningCombs = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]]
 
   //hide messages
   $(".win-p1-messages").hide();
@@ -16,8 +17,6 @@ console.log("tic tac toe connected");
 
 
   var playerClick =$(".boardPiece").click(function() {
-
-
     var playerPick = $(this).attr('id');
 
     player1Play(playerPick, board);
@@ -95,71 +94,80 @@ function dataCheck(player1Position, player2Position, board) {
 }
 
   function checkforWinner(player1Position, player2Position, board) {
-
-    var winningCombs = [[8,1,6], [3,5,7], [4,9,2], [8,3,4], [1,5,9], [6,7,2], [8,5,2], [6,5,4]]
-
-      for (var p1 = 0; p1 < winningCombs.length; p1++) {
-          var setFoundP1 = true;  //use variable to find set.
-
-            for (p = 0; p < winningCombs[p1].length; p++) {
-                var foundP1 = false;
-
-                // player1 hand
-              for (q = 0; q < player1Position.length; q++) {
-                  if (winningCombs[p1][p] == player1Position[q]) {
-                    foundP1 = true;
-                    break;
-                            }
-                  }
-                  // value not found in players hand
-                  // not a valid set, move on
-                if (foundP1 == false) {
-                      setFoundP1 = false;
-                      break;
-                }
-            }// end of inner for loop
-
-          if (setFoundP1 == true) {
-            var winP1 = true;
-            break;
-            }
-      } //end of outer for loop
-
-
-          for ( p2= 0; p2 < winningCombs.length; p2++) {
-
-              var setFoundP2 = true;
-                    for (r = 0; r < winningCombs[p2].length; r++) {
-                          // check if number matches winning combo
-                          // if not, break, not winner
-                          var foundP2 = false;
-                          // players hand
-                        for (s = 0; s < player2Position.length; s++) {
-                            if (winningCombs[p2][r] == player2Position[s]) {
-
-                                foundP2 = true;
-                                break;
-                            }
-                          }
-
-                          // value not found in players hand
-                          // not a valid set, move on
-                          if (foundP2 == false) {
-                              setFoundP2 = false;
-                              break;
-                                  }
-                                    }// end of inner for loop
-
-                                    if (setFoundP2 == true) {
-                                        var winP2 = true;
-
-                                        break;
-                                    }
-                              } //end of outer for loop
-
-
+    var winP1 = winCheck(player1Position);
+    var winP2 = winCheck(player2Position);
+      // for (var p1 = 0; p1 < winningCombs.length; p1++) {
+      //     var setFoundP1 = true;  //use variable to find set.
+      //
+      //       for (p = 0; p < winningCombs[p1].length; p++) {
+      //           var foundP1 = false;
+      //
+      //           // player1 hand
+      //         for (q = 0; q < player1Position.length; q++) {
+      //             if (winningCombs[p1][p] == player1Position[q]) {
+      //               foundP1 = true;
+      //               break;
+      //                       }
+      //             }
+      //             // value not found in players hand
+      //             // not a valid set, move on
+      //           if (foundP1 == false) {
+      //                 setFoundP1 = false;
+      //                 break;
+      //           }
+      //       }// end of inner for loop
+      //
+      //     if (setFoundP1 == true) {
+      //       var winP1 = true;
+      //       break;
+      //       }
+      // } //end of outer for loop
+      //
+      //
+      //     for ( p2= 0; p2 < winningCombs.length; p2++) {
+      //
+      //         var setFoundP2 = true;
+      //               for (r = 0; r < winningCombs[p2].length; r++) {
+      //                     // check if number matches winning combo
+      //                     // if not, break, not winner
+      //                     var foundP2 = false;
+      //                     // players hand
+      //                   for (s = 0; s < player2Position.length; s++) {
+      //                       if (winningCombs[p2][r] == player2Position[s]) {
+      //
+      //                           foundP2 = true;
+      //                           break;
+      //                       }
+      //                     }
+      //
+      //                     // value not found in players hand
+      //                     // not a valid set, move on
+      //                     if (foundP2 == false) {
+      //                         setFoundP2 = false;
+      //                         break;
+      //                             }
+      //                               }// end of inner for loop
+      //
+      //                               if (setFoundP2 == true) {
+      //                                   var winP2 = true;
+      //
+      //                                   break;
+      //                               }
+      //                         } //end of outer for loop
+      //
+      //
     updateScoreBoard(winP1,winP2, board)
     }//end function
+
+    var winCheck = function(player) {
+      win = false;
+      winningCombs.forEach(function(winCombo) {
+        if (player.sort().join('').search(winCombo.join('')) != -1) {
+          win = true;
+        }
+      });
+      return win;
+    }
 
 
 
