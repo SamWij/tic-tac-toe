@@ -74,28 +74,6 @@ within this for loop another for loop is running that checks the winning combina
     }```
 
 
-This runs through twice, one for player1, the other for player 2.  This works, badly and will need to be re-thought though.
-
-###messages
-
-I did not complete messages and the code is commented out.  This is a part of the To Do list below.
-The objective was to on win or tie a message to appear by:
-
-1. hiding the board pieces.
-2. showing the message (in a div)
-3. fade the div out
-4. display the board.
-
-
-## Things Not Finished/ To Do Items
-
-1. refactor code (merge the winning combination function and re-write)
-2. get the winning combinations function completed.
-3. get the win and tie messages flashing.
-4. data storage
-5.
-
-
 ##Learnings
 
 1. don't panic!!!
