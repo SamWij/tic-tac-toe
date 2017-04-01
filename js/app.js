@@ -1,4 +1,5 @@
 console.log("connected")
+
 var ties = 0;
 var player1TotalWins = 0;
 var player2TotalWins = 0;
@@ -12,7 +13,6 @@ var board = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5
 //play another game and keep scoreboard as is
 var playAgain = $(".new-game").click(function() {
   clearBoard();
-
 });
 
 //reload
@@ -66,9 +66,7 @@ var currentPlay = function(boardPieceChosen) {
   } else if (moves >= 5) {
     checkForWin(win)
   }
-
-
-  }
+}
 
 
 var checkForWin = function(win) {
@@ -91,22 +89,24 @@ var checkForWin = function(win) {
 var updateScoreBoard = function(winner) {
   if (winner === "player one") {
     player1TotalWins++
+    $(".playerTotal").text(player1TotalWins)
   } else if (winner === "player two") {
-    player2TotalWins++;
+    player2TotalWins++
+    $(".computerTotal").text(player2TotalWins)
   } else if (winner === "tie") {
     ties++
+    $(".ties").text(ties)
+  } else {
+    console.log(winner + " no winner")
   }
 
-  $(".playerTotal").text(player1TotalWins)
-  $(".ties").text(ties)
-  $(".computerTotal").text(player2TotalWins)
   messages(winner)
 }
 
 var messages =  function (winner) {
 
   if (winner === "player one" || winner === "player two" ) {
-    $('.messages').append('<p>').html('BRAIINNSS!!! ' + winner + " has won!").fadeIn(2000);
+    $('.messages').append('<p>').html(winner + " has won!").fadeIn(2000);
     $('.messages').fadeOut( 3000);
     clearBoard();
   } else if (winner === "tie") {
