@@ -79,4 +79,4 @@ within this for loop another for loop is running that checks the winning combina
 1. don't panic!!!
 2. things that seem simple are not! think it through slowly, do not rush.
 3. do not read, or read other peoples code to get ideas, it just confuses me.  Approach things my way.
-4. psuedo code and write down the approach before beginning.
+4. pseudo code and write down the approach before beginning.
