@@ -4,40 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/bulma.css">
+  <script src="https://use.fontawesome.com/d771dd5ed4.js"></script>
   <link rel="stylesheet" href="css/main.css">
+
   <title>Tic Tac Toe</title>
 </head>
 <body>
-<div class="container">
-  <div class="header">
-    <div class="titleImage">
-      <img class='imgHeader' src="images/attack1.png" alt="">
+  <section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-gapless">
+        <div class="column">
+          <img class='imgHeader' src="images/attack1.png" alt="">
+        </div>
+        <div class="column">
+          <h1 class="title">Tic Tac arrrghhh!!!</h1>
+        </div>
+        <div class="column">
+          <img class='imgHeader' src="images/attack.png" alt="">
+        </div>
+      </div>
     </div>
-    <div>
-      <h1 class="title">Tic Tac arrrghhh!!!</h1>
-    </div>
-
-    <div class="titleImage">
-      <img class='imgHeader' src="images/attack.png" alt="">
-    </div>
-</div>
-  <div class="scoreboard">
-
   </div>
+</section>
+
+
 
 
 
   <div class="menu">
-    <button class ="reload">Start Over</button>
-    <button class ="new-game">New Game</button>
+    <a class="button is-large">Start Over</a>
+    <a class="button is-large">New Game</a>
     <div class="scores">
       <div class="p1-scoreboard">
-        <h2>Player 1: <span class="playerTotal"></span></h2>
+        <h2>Player X: <span class="playerTotal"></span></h2>
       </div>
 
       <div class="p2-scoreboard">
-        <h2>Player 2: <span class="computerTotal"></span></h2>
+        <h2>Player O: <span class="computerTotal"></span></h2>
       </div>
 
       <div class="tie-scoreboard">
@@ -69,13 +76,20 @@
       </div>
 
   </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="social" href="https://github.com/SamWij"><i class="fa fa-github"></i></a>
+        <a class="social" href="https://www.linkedin.com/in/samwijesinha/"><i class="fa fa-linkedin"></i></a>
+        <a class="social" href="https://twitter.com/CTRL_ALT_DEL"><i class="fa fa-twitter"></i></a>
+        <br>
 
-  <footer>
-    <a href="https://github.com/SamWij"><img class="social" src="images/github2.png" alt="git hub"></a>
-    <a href="https://www.linkedin.com/in/samwijesinha/"><img class="social" src="images/linkedin.png" alt="linkedin"></a>
-    <a href="https://twitter.com/CTRL_ALT_DEL"><img class="social" src="images/twitter.png" alt="twitter"></a>
-      <p class="creator">&copy; samwij 2017.</p>
-  </footer>
+      </div>
+
+    </div>
+      <p class="copywrite content has-text-centered">&copy; samwij 2017.</p>
+</footer>
+
 </div> <!-- container end  -->
       <script   src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
       <script src="js/app.js" charset="utf-8"></script>

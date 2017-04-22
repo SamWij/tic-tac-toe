@@ -107,11 +107,11 @@ var messages =  function (winner) {
 
   if (winner === "player one" || winner === "player two" ) {
     $('.messages').append('<p>').html(winner + " has won!").fadeIn(2000);
-    $('.messages').fadeOut( 3000);
+    $('.messages').fadeOut( 2000);
     clearBoard();
   } else if (winner === "tie") {
     $('.messages').html("urrrrggghh!!! it's a tie").fadeIn(2000);
-    $('.messages').fadeOut( 3000);
+    $('.messages').fadeOut( 2000);
     clearBoard();
   }
 
