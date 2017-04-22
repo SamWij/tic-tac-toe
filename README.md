@@ -59,4 +59,4 @@ there is a Board array:
 
 1. don't panic!!!
 2. things that seem simple are not! think it through slowly, do not rush.
-4. psuedo code and write down the approach before beginning.
+3. psuedo code and write down the approach before beginning.
